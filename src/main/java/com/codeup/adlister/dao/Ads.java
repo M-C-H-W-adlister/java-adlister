@@ -17,4 +17,7 @@ public interface Ads {
 
   //Below is for Searching by the ads title.
   List<Ad> searchByTitle(String query);
+
+  // for listing ads on profile page
+  List<Ad> findByUserID(Long userId);
 }
