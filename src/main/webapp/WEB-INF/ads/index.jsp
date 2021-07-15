@@ -11,6 +11,13 @@
 
 <div class="container">
     <h1>Custom recipes from our table to yours!</h1>
+    <form method="post" action="/search">
+        <label for="searchTitle">
+            Search by Title
+        </label>
+        <input id="searchTitle" name="searchTitle" type="text">
+        <button type="submit"> Search </button>
+    </form>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
