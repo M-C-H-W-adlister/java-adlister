@@ -93,4 +93,9 @@ public class MySQLAdsDao implements Ads {
     }
   }
 
+  @Override
+  public List<Ad> searchByTitle(String query) {
+    return null;
+  }
+
 }
