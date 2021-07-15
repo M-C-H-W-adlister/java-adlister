@@ -23,14 +23,13 @@ public class RegisterServlet extends HttpServlet {
         String passwordConfirmation = request.getParameter("confirm_password");
 
       System.out.println(DaoFactory.getUsersDao().findByUsername(username) == null);
-
+      boolean usernameTaken = DaoFactory.getUsersDao().findByUsername(username) == null;
       // validate input
         boolean inputHasErrors = username.isEmpty()
             || email.isEmpty()
             || password.isEmpty()
             || (! password.equals(passwordConfirmation))
-            || DaoFactory.getUsersDao().findByUsername(username) == null;
-
+            || !usernameTaken;
 
         if (inputHasErrors) {
             response.sendRedirect("/register");
