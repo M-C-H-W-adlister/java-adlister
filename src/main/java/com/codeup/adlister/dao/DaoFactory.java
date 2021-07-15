@@ -11,6 +11,11 @@ public class DaoFactory {
         }
         return adsDao;
     }
+// ? Should the search function be in this class?
+
+    public static Ads adSearch(){
+        if
+    }
 
     public static Users getUsersDao() {
         if (usersDao == null) {
