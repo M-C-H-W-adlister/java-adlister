@@ -11,6 +11,17 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
+    <c:forEach var="ad" items="${ads}">
+        <div class="col-md-6">
+            <h2>${ad.title}</h2>
+            <p>${ad.description}</p>
+            <form method="GET" action="/ads/ad">
+                <label for="selectedAd" hidden></label>
+                <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">
+                <button type="submit">View Ad</button>
+            </form>
+        </div>
+    </c:forEach>
 
 </body>
 </html>
