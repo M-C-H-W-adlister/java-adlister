@@ -5,7 +5,10 @@ import com.codeup.adlister.models.Ad;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdsDao implements Ads {
+public class ListAdsDao{
+//  public class ListAdsDao implements Ads {
+//
+//No longer need this class above.
     private List<Ad> ads;
 
     public List<Ad> all() {
