@@ -10,7 +10,7 @@ public interface Ads {
 
   // insert a new ad and return the new ad's id
   Long insert(Ad ad);
-
+  // find ads by their ids
   Ad findByID(Long id);
 
 }
