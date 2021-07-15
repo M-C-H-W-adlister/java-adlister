@@ -18,7 +18,7 @@ import java.util.List;
 public class SearchServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String query = req.getParameter("query");
+        String query = req.getParameter("searchTitle");
         List<Ad> results = DaoFactory.getAdsDao().searchByTitle(query);
         req.setAttribute("query", query);
         req.setAttribute("ads", results);
