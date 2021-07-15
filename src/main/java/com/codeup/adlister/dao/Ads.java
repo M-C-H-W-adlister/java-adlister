@@ -5,6 +5,7 @@ import com.codeup.adlister.models.Ad;
 import java.util.List;
 
 public interface Ads {
+
   // get a list of all the ads
   List<Ad> all();
 
@@ -12,5 +13,5 @@ public interface Ads {
   Long insert(Ad ad);
   // find ads by their ids
   Ad findByID(Long id);
-
-}
+  //Below is for Searching by the ads title.
+  List<Ad> searchByTitle(String query);
