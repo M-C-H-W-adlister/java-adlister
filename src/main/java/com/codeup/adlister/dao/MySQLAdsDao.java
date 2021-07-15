@@ -73,15 +73,19 @@ public class MySQLAdsDao implements Ads {
     return ads;
   }
 
-
+//Below for is the ViewAdServlet
+//It makes a SQL query that searches by ID, (which cannot be the same unlike a title)
   public Ad findByID(Long id) {
     String query = "SELECT * FROM ads WHERE id = ? LIMIT 1";
+//    We are going to replace the ? with the ID that was clicked.
     try {
       PreparedStatement stmt = connection.prepareStatement(query);
       stmt.setLong(1, id);
-      System.out.println(stmt);
-      System.out.println(stmt.executeQuery());
+//    Message below are to make sure we are getitng the expected messages.
+//      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
       ResultSet rs = stmt.executeQuery();
+//      We store the results from the query inside of a REsultSet variable so we can iterate over the results, and grab the Ad
       rs.next();
       return extractAd(rs);
     } catch (SQLException e) {
