@@ -13,6 +13,4 @@ public interface Ads {
 
   Ad findByID(Long id);
 
-  Ad findByID(String id);
-
 }

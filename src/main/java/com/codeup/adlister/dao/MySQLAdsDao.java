@@ -75,26 +75,16 @@ public class MySQLAdsDao implements Ads {
 
 
   public Ad findByID(Long id) {
-    String query = "SELECT * FROM ads WHERE id = ? LIMIT 1;";
+    String query = "SELECT * FROM ads WHERE id = ? LIMIT 1";
     try {
       PreparedStatement stmt = connection.prepareStatement(query);
       stmt.setLong(1, id);
       System.out.println(stmt);
+      System.out.println(stmt.executeQuery());
       return extractAd(stmt.executeQuery());
     } catch (SQLException e) {
       throw new RuntimeException("Error finding an Ad by ID", e);
     }
   }
 
-  public Ad findByID(String id) {
-    String query = "SELECT * FROM ads WHERE id = ? LIMIT 1";
-    try {
-      PreparedStatement stmt = connection.prepareStatement(query);
-      stmt.setString(1, id);
-      System.out.println(stmt);
-      return extractAd(stmt.executeQuery());
-    } catch (SQLException e) {
-      throw new RuntimeException("Error finding an Ad by ID String version", e);
-    }
-  }
 }
