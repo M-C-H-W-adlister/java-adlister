@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads {
+public  class MySQLAdsDao implements Ads{
     private Connection connection = null;
 
     public MySQLAdsDao(Config config) {
@@ -26,7 +26,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    @Override
+//    @Override
     public List<Ad> all() {
         PreparedStatement stmt = null;
         try {
@@ -38,7 +38,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
-    @Override
+//    @Override
     public Long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
@@ -71,4 +71,6 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 }
