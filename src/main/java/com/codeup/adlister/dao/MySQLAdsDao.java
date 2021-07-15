@@ -94,9 +94,24 @@ public class MySQLAdsDao implements Ads {
   }
 
   @Override
-  public List<Ad> searchByTitle(String query) {
-    return null;
+  public List<Ad> searchByTitle(String title) {
+    String query = "SELECT * FROM ads WHERE title LIKE ?";
+    String searchWildCards = "%" + title + "%";
+//    We are going to replace the ? with the Title that was clicked.
+    PreparedStatement stmt = null;
+    try {
+       stmt = connection.prepareStatement(query);
+      stmt.setString(1, searchWildCards);
+      ResultSet rs = stmt.executeQuery();
+//      We store the results from the query inside of a ResultSet variable so we can iterate over the results, and grab the Ad
+//      rs.next();
+      return createAdsFromResults(rs);
+    } catch (SQLException e) {
+      throw new RuntimeException("Error finding an Ad by Title", e);
+    }
+
   }
+
 
   public List<Ad> findByUserID(Long userId) {
     String query = "SELECT * FROM ads WHERE user_id = ? LIMIT 1";
