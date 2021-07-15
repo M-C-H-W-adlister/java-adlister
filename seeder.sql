@@ -1,6 +1,6 @@
 
 
-USE food_mood;
+USE adlister_db;
 
 TRUNCATE users;
 
