@@ -19,6 +19,7 @@ public class ViewProfileServlet extends HttpServlet {
             response.sendRedirect("/login");
             return;
         }
+
         User currentUser = (User)request.getSession().getAttribute("user");
         // get user by ID dao
 

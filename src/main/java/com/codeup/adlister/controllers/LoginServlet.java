@@ -26,10 +26,21 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
-        if (user == null) {
+      boolean invalidUsername = user == null;
+
+      if(invalidUsername){
+        request.getSession().setAttribute("usernameFail", username);
+        request.getSession().setAttribute("invalidUsername", true);
+        request.getSession().setAttribute("errorMessage","Username not found in database.");
+        response.sendRedirect("/login");
+        return;
+      }
+
+      if (user == null) {
             response.sendRedirect("/login");
             return;
         }
+
 
         boolean validAttempt = Password.check(password, user.getPassword());
 
