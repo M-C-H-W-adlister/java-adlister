@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "NameOfServlet", urlPatterns = "/ads/delete")
+@WebServlet(name = "AdDeleteServlet", urlPatterns = "/ads/delete")
 public class AdDeleteServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Ad deleteAdd = (Ad) request.getSession().getAttribute("ad");
     DaoFactory.getAdsDao().deleteByID(deleteAdd.getId());
-    response.sendRedirect("/ads");
+    response.sendRedirect("/profile");
   }
 }

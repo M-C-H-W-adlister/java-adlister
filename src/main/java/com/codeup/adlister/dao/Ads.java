@@ -22,4 +22,5 @@ public interface Ads {
   List<Ad> findByUserID(Long userId);
 
   void deleteByID(Long id);
+  void editByID(Long id, String newTitle, String newDesc);
 }

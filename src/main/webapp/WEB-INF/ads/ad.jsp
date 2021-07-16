@@ -11,7 +11,7 @@
 
 <c:choose>
   <c:when test="${sessionScope.isOwner}">
-    <form method ="post" action="/ads/edit">
+    <form method ="POST" action="/ads/edit">
     <h2>You are the owner you may edit this.</h2>
 
       <div class="container">
@@ -23,7 +23,7 @@
         <button type="submit">Submit Changes</button>
       </div>
     </form>
-    <form method="post" action="/ads/delete">
+    <form method="POST" action="/ads/delete">
       <div class="container">
       <button type="submit">Delete me</button>
       </div>
