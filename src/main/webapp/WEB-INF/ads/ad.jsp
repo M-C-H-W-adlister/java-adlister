@@ -11,8 +11,8 @@
 
 <c:choose>
   <c:when test="${sessionScope.isOwner}">
-    <form method ="post" action="/ads/ad">
-    <h2>HI you are the owner bro!</h2>
+    <form method ="post" action="/ads/edit">
+    <h2>You are the owner you may edit this.</h2>
 
       <div class="container">
         <h1><label for="newTitle">New Title:</label><input type="text" name="newTitle" id="newTitle" value="${sessionScope.ad.title}!"></h1>
@@ -20,8 +20,12 @@
         <br>
 <%--        <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
         <h4>Creator: ${sessionScope.adOwner.username}</h4>
-
-
+        <button type="submit">Submit Changes</button>
+      </div>
+    </form>
+    <form method="post" action="/ads/delete">
+      <div class="container">
+      <button type="submit">Delete me</button>
       </div>
     </form>
   </c:when>
@@ -32,7 +36,6 @@
       <br>
 <%--      <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
       <h4>Creator: ${sessionScope.adOwner.username}</h4>
-
     </div>
   </c:otherwise>
 </c:choose>

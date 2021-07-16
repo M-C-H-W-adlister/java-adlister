@@ -20,4 +20,6 @@ public interface Ads {
 
   // for listing ads on profile page
   List<Ad> findByUserID(Long userId);
+
+  void deleteByID(Long id);
 }

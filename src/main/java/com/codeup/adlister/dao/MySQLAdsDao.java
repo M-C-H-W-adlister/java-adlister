@@ -132,6 +132,23 @@ public class MySQLAdsDao implements Ads {
     }
   }
 
+  public void deleteByID(Long id) {
+    String query = "DELETE FROM ads WHERE id = ? LIMIT 1";
+//    We are going to replace the ? with the ID that wants to be deleted.
+    try {
+      PreparedStatement stmt = connection.prepareStatement(query);
+      stmt.setLong(1, id);
+//    Message below are to make sure we are getting the expected messages.
+//      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
+//    I think below just executes the query, so we don't need to return anything because we are deleting it.
+//      stmt.executeQuery();
+      stmt.execute();
+    } catch (SQLException e) {
+      throw new RuntimeException("Error deleting an Ad by ID", e);
+    }
+  }
+
 
 
 }
