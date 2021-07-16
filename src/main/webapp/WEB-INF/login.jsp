@@ -16,13 +16,18 @@
                 <input id="username" name="username" class="form-control" type="text" value="${sessionScope.usernameFail}">
               <c:choose>
                 <c:when test="${sessionScope.invalidUsername}">
-                  <h2>${sessionScope.errorMessage}</h2>
+                  <p class="alert alert-danger" role="alert" >${sessionScope.errorUserMessage}</p>
                 </c:when>
               </c:choose>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
+                <c:choose>
+                    <c:when test="${sessionScope.invalidPassword}">
+                        <p class="alert alert-danger" role="alert" >${sessionScope.errorPasswordMessage}</p>
+                    </c:when>
+                </c:choose>
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>

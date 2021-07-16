@@ -27,20 +27,33 @@ public class LoginServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
       boolean invalidUsername = user == null;
+      boolean invalidPassword = password == null;
 
       if(invalidUsername){
         request.getSession().setAttribute("usernameFail", username);
         request.getSession().setAttribute("invalidUsername", true);
-        request.getSession().setAttribute("errorMessage","Username not found in database.");
+        request.getSession().setAttribute("errorUserMessage","Username not found in database.");
         response.sendRedirect("/login");
         return;
       }
+//      if(invalidPassword) {
+//          request.getSession().setAttribute("passwordFail", password);
+//          request.getSession().setAttribute("invalidPassword", true);
+//          request.getSession().setAttribute("errorPasswordMessage", "password is incorrect, please try again");
+//          response.sendRedirect("/login");
+//      }
 
-      if (user == null) {
-            response.sendRedirect("/login");
-            return;
-        }
+//      if (user == null) {
+//            response.sendRedirect("/login");
+//            return;
+//        }
+//        if (password == null) {
+//            response.sendRedirect("/login");
+//            return;
+//        }
+//
 
+        // getRequestAttribute
 
         boolean validAttempt = Password.check(password, user.getPassword());
 
@@ -48,6 +61,9 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
         } else {
+            request.getSession().setAttribute("usernameFail", username);
+            request.getSession().setAttribute("invalidPassword", true);
+            request.getSession().setAttribute("errorPasswordMessage", "password is incorrect, please try again");
             response.sendRedirect("/login");
         }
     }

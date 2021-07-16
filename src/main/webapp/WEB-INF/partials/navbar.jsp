@@ -14,8 +14,10 @@
       <c:choose>
         <c:when test="<%=loggedIn%>">
           <li><a href="/logout">Logout</a></li>
+          <li><a href="/ads/create">Create Recipes</a></li>
         </c:when>
         <c:otherwise>
+          <li><a href="/register">Register</a></li>
           <li><a href="/login">Login</a></li>
         </c:otherwise>
       </c:choose>
