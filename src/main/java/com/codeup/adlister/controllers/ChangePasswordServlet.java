@@ -18,7 +18,7 @@ public class ChangePasswordServlet extends HttpServlet {
         String newPassword = request.getParameter("newPassword");
         String hashedPassword = Password.hash(newPassword);
 
-        //        DaoFactory.getUsersDao().
+                DaoFactory.getUsersDao().updateUserPassword(editUser.getId(),hashedPassword);
         response.sendRedirect("/profile");
     }
 }
