@@ -11,6 +11,9 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
+    <form method="post" action="/editProfile">
+        <button type="submit">Edit Profile</button>
+    </form>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
