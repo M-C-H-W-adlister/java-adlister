@@ -21,6 +21,17 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public User findByUserEmail(String email){
+        String query = "SELECT * FROM users WHERE email = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, email);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by email", e);
+        }
+    }
 
     @Override
     public User findByUsername(String username) {
@@ -49,6 +60,11 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
+    }
+
+    @Override
+    public User findByUserID(long id) {
+        return null;
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
