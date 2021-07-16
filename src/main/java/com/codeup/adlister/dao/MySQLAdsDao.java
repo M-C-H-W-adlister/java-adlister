@@ -132,6 +132,46 @@ public class MySQLAdsDao implements Ads {
     }
   }
 
+  public void deleteByID(Long id) {
+    String query = "DELETE FROM ads WHERE id = ? LIMIT 1";
+//    We are going to replace the ? with the ID that wants to be deleted.
+    try {
+      PreparedStatement stmt = connection.prepareStatement(query);
+      stmt.setLong(1, id);
+//    Message below are to make sure we are getting the expected messages.
+//      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
+//    I think below just executes the query, so we don't need to return anything because we are deleting it.
+      stmt.execute();
+    } catch (SQLException e) {
+      throw new RuntimeException("Error deleting an Ad by ID", e);
+    }
+  }
+
+  public void editByID(Long id, String newTitle, String newDesc) {
+
+    String queryTitle = "UPDATE ads set title = ? where id = ?";
+    String queryDesc = "UPDATE ads set description = ? where id = ?";
+//    We are going to replace the ? with the ID that wants to be deleted.
+    try {
+      PreparedStatement stmtTitle = connection.prepareStatement(queryTitle);
+      PreparedStatement stmtDesc = connection.prepareStatement(queryDesc);
+      stmtTitle.setString(1, newTitle);
+      stmtDesc.setString(1, newDesc);
+      stmtTitle.setLong(2, id);
+      stmtDesc.setLong(2, id);
+
+//    Message below are to make sure we are getting the expected messages.
+//      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
+//    I think below just executes the query, so we don't need to return anything because we are deleting it.
+      stmtTitle.executeUpdate();
+      stmtDesc.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException("Error Editing an Ad by ID", e);
+    }
+  }
+
 
 
 }

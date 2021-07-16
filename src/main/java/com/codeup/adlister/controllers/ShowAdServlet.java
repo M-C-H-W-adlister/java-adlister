@@ -17,10 +17,10 @@ public class ShowAdServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //    Below is from the ViewProfile servlet where it would check to see if you are logged in before viewing the page.
 
-//    if (request.getSession().getAttribute("user") == null) {
-//      response.sendRedirect("/login");
-//      return;
-//    }
+    if (request.getSession().getAttribute("user") == null) {
+      response.sendRedirect("/login");
+      return;
+    }
 //    Below we grab the ID of the ad we clicked, then stick it into an Attribute
     HttpSession session = request.getSession();
     String currentAdIDString = request.getParameter("selectedAd");
@@ -30,11 +30,11 @@ public class ShowAdServlet extends HttpServlet {
 //    Below we use the id we grabbed to turn it into an Ad object
     Ad ad = DaoFactory.getAdsDao().findByID(currentAdID);
 //    Setting the ad to the session attribute.
-    request.getSession().setAttribute("ad",ad);
+    request.getSession().setAttribute("ad", ad);
 
 //    Below we are grabbing the Ad's owner's username
     User adOwner = DaoFactory.getUsersDao().findByUserID(ad.getUserId());
-    request.getSession().setAttribute("adOwner",adOwner);
+    request.getSession().setAttribute("adOwner", adOwner);
 
 
 //   We are checking to see if the user is the Owner, (if the creator and user ids match)
@@ -44,13 +44,13 @@ public class ShowAdServlet extends HttpServlet {
     boolean isOwner = user.getId() == ad.getUserId();
 //  if they do then we are going to make the attribute isOwner true.
 //   or set it to false if they are not... don't use an if statement.
-      request.getSession().setAttribute("isOwner", isOwner);
+    request.getSession().setAttribute("isOwner", isOwner);
 
 
     request.getRequestDispatcher("/WEB-INF/ads/ad.jsp").forward(request, response);
   }
 
-//
+  //
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //    Below is from the ViewProfile servlet where it would check to see if you are logged in before viewing the page.
 
@@ -58,7 +58,6 @@ public class ShowAdServlet extends HttpServlet {
       response.sendRedirect("/login");
       return;
     }
-
 //    Below we grab the ID of the ad we clicked, then stick it into an Attribute
     HttpSession session = request.getSession();
     String currentAdIDString = request.getParameter("selectedAd");
@@ -68,9 +67,25 @@ public class ShowAdServlet extends HttpServlet {
 //    Below we use the id we grabbed to turn it into an Ad object
     Ad ad = DaoFactory.getAdsDao().findByID(currentAdID);
 //    Setting the ad to the session attribute.
-    request.getSession().setAttribute("ad",ad);
+    request.getSession().setAttribute("ad", ad);
 
-//    This should redirect us to the get? idk tho...
-    response.sendRedirect("/WEB-INF/ads/ad");
+//    Below we are grabbing the Ad's owner's username
+    User adOwner = DaoFactory.getUsersDao().findByUserID(ad.getUserId());
+    request.getSession().setAttribute("adOwner", adOwner);
+
+
+//   We are checking to see if the user is the Owner, (if the creator and user ids match)
+    User user = (User) request.getSession().getAttribute("user");
+
+
+    boolean isOwner = user.getId() == ad.getUserId();
+//  if they do then we are going to make the attribute isOwner true.
+//   or set it to false if they are not... don't use an if statement.
+    request.getSession().setAttribute("isOwner", isOwner);
+
+
+    request.getRequestDispatcher("/WEB-INF/ads/ad.jsp").forward(request, response);
   }
 }
+
+//
