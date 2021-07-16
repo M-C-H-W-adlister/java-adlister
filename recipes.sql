@@ -1,4 +1,5 @@
 USE adlister_db;
+# ad == recipe
 
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS cuisine;
@@ -23,7 +24,7 @@ CREATE TABLE cuisine
     PRIMARY KEY (id)
 );
 
-CREATE TABLE author
+CREATE TABLE author # Just use user instead, swap this for ingredients
 (
     id   INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(200) NOT NULL DEFAULT 'Unknown',
@@ -37,7 +38,7 @@ CREATE TABLE author
 #     author_id INT UNSIGNED,
 #     FOREIGN KEY (author_id) REFERENCES author(id),
 #     PRIMARY KEY (id)
-# ); //Delete?
+# ); # Delete?
 
 CREATE TABLE recipes
 (
