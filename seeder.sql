@@ -1,5 +1,4 @@
 
-
 USE adlister_db;
 
 INSERT INTO users (username, email, password)
