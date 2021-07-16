@@ -172,6 +172,25 @@ public class MySQLAdsDao implements Ads {
     }
   }
 
+  public List<Ad> listByCatID(Long catID) {
+    String query = "SELECT * FROM ads WHERE id IN (SELECT ad_id FROM ad_cat WHERE cat_id = ?);";
+//    We are going to replace the ? with the ID that was clicked.
+    try {
+      PreparedStatement stmt = connection.prepareStatement(query);
+      stmt.setLong(1, catID);
+//    Message below are to make sure we are getting the expected messages.
+      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
+      ResultSet rs = stmt.executeQuery();
+//      We store the results from the query inside of a REsultSet variable so we can iterate over the results, and grab the Ad
+//      rs.next();
+      return createAdsFromResults(rs);
+    } catch (SQLException e) {
+
+      throw new RuntimeException("Error listing ads by cat ID.", e);
+    }
+  }
+
 
 
 }

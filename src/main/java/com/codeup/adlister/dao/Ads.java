@@ -23,4 +23,6 @@ public interface Ads {
 
   void deleteByID(Long id);
   void editByID(Long id, String newTitle, String newDesc);
+  List<Ad> listByCatID(Long catID);
+
 }
