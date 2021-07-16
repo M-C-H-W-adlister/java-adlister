@@ -18,7 +18,15 @@
         <h1><label for="newTitle">New Title:</label><input type="text" name="newTitle" id="newTitle" value="${sessionScope.ad.title}!"></h1>
         <p><label for="newDesc">New Title:</label><input type="text" name="newDesc" id="newDesc" value="${sessionScope.ad.description}!"></p>
         <br>
-<%--        <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
+        <ul>
+          <c:forEach var="ingredient" items="${sessionScope.ingredients}">
+            <li>
+                ${ingredient}
+            </li>
+          </c:forEach>
+        </ul>
+        <br>
+      <%--        <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
         <h4>Creator: ${sessionScope.adOwner.username}</h4>
         <button type="submit">Submit Changes</button>
       </div>
@@ -34,7 +42,15 @@
       <h1>Title: ${sessionScope.ad.title}!</h1>
       <p>Description: ${sessionScope.ad.description}!</p>
       <br>
-<%--      <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
+      <ul>
+      <c:forEach var="ingredient" items="${sessionScope.ingredients}">
+        <li>
+          ${ingredient}
+        </li>
+      </c:forEach>
+      </ul>
+      <br>
+    <%--      <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
       <h4>Creator: ${sessionScope.adOwner.username}</h4>
     </div>
   </c:otherwise>
