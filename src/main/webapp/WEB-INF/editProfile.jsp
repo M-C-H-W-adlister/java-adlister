@@ -10,6 +10,8 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+        <div class="container mt-4" style="background-color: azure">
+            <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
     <title>Edit Profile</title>
     <div>
         <h3>What would you like to edit?</h3>
@@ -28,7 +30,8 @@
         <input id = newEmail name="newEmail" type="text">
         <button type="submit"> Change Email</button>
     </form>
-
+            </div>
+        </div>
 </head>
 <body>
 

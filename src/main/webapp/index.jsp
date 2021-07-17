@@ -13,8 +13,7 @@
 <%--        comment--%>
     </div>
 
-    <div class="container mt-4" style="background-color: azure">
-        <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
+   c
             <form action="/" method="POST" class="form-inline col-12 justify-content-center"></form>
                 <h1 class="col-12 text-center mb-5">Welcome to the Adlister!</h1>
                 <input id="search-title" name="search-title" type="search" placeholder="Search Ads"

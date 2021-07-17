@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container">
+<div class="container mt-4" style="background-color:azure">
     <h1>Custom recipes from our table to yours!</h1>
     <form method="post" action="/search">
         <label for="searchTitle">
