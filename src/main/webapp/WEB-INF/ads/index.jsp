@@ -19,11 +19,26 @@
         <button type="submit"> Search </button>
     </form>
 
+  <form method="post" action="ads/category">
+    <label for="catID">Select category to search by.</label>
+    <select id="catID" name="catID">
+      <option value="1">Meat Lovers</option>
+      <option value="2">Vegetarian</option>
+      <option value="3">Keto</option>
+      <option value="4">Gluten Free</option>
+      <option value="5">Japanese Style</option>
+      <option value="6">Mexican</option>
+      <option value="7">American</option>
+      <option value="8">Tex-mex</option>
+    </select>
+    <button type="submit">Submit category</button>
+  </form>
+
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
-          <form method="GET" action="/ads/ad">
+          <form method="POST" action="/ads/ad">
             <label for="selectedAd" hidden></label>
             <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">
             <button type="submit">View Ad</button>

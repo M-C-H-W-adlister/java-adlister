@@ -74,6 +74,33 @@ public class MySQLUsersDao implements Users {
             rs.getString("password")
         );
     }
+  public User findByUserID(long id) {
+    String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+    try {
+      PreparedStatement stmt = connection.prepareStatement(query);
+      stmt.setLong(1, id);
+      return extractUser(stmt.executeQuery());
+    } catch (SQLException e) {
+      throw new RuntimeException("Error finding a user by username", e);
+    }
+  }
+    public void updateUserPassword (long id, String hashedPassword) {
+        String updateSql = "UPDATE users set password = ? where id = ?";
+//    We are going to replace the ? with the ID that wants to be deleted.
+        try {
+            PreparedStatement stmt = connection.prepareStatement(updateSql);
+            stmt.setString(1, hashedPassword);
+            stmt.setLong(2, id);
+
+//    Message below are to make sure we are getting the expected messages.
+//      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
+//    I think below just executes the query, so we don't need to return anything because we are deleting it.
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error Editing an Ad by ID", e);
+        }
+    }
 
     @Override
     public User findByUserEmail(String email){
