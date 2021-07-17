@@ -93,6 +93,24 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+
+
+    public void updateUserEmail (long id, String email) {
+        String updateSql = "UPDATE users set email = ? where id = ?";
+//    We are going to replace the ? with the ID that wants to be deleted.
+        try {
+            PreparedStatement stmt = connection.prepareStatement(updateSql);
+            stmt.setString(1, email);
+            stmt.setLong(2, id);
+
+//    Message below are to make sure we are getting the expected messages.
+//      System.out.println(stmt);
+//      System.out.println(stmt.executeQuery());
+//    I think below just executes the query, so we don't need to return anything because we are deleting it.
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error Editing an Ad by ID", e);
+
     @Override
     public User findByUserEmail(String email){
         String query = "SELECT * FROM users WHERE email = ? LIMIT 1";
@@ -102,7 +120,9 @@ public class MySQLUsersDao implements Users {
             return extractUser(stmt.executeQuery());
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by email", e);
+
         }
     }
 
 }
+
