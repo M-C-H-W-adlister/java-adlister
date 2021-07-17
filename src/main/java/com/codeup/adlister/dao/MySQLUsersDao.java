@@ -51,6 +51,18 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public User findByUserID(long id) {
+        String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by username", e);
+        }
+    }
+
     private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
@@ -87,6 +99,18 @@ public class MySQLUsersDao implements Users {
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error Editing an Ad by ID", e);
+        }
+    }
+
+    @Override
+    public User findByUserEmail(String email){
+        String query = "SELECT * FROM users WHERE email = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, email);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by email", e);
         }
     }
 

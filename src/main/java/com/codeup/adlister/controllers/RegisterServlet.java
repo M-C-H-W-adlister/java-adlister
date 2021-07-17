@@ -37,8 +37,43 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
-        User user = new User(username, email, password);
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
+        // commented out because code is being reused for the error stickies
+//        User user = new User(username, email, password);
+//        DaoFactory.getUsersDao().insert(user);
+//        response.sendRedirect("/login");
+
+        // booleans to make sure if user exists already
+        boolean usernameNotExists =  false;
+        boolean userEmailNotExists =  false;
+        boolean noUserConflicts = false;
+        
+        User userNameTest = DaoFactory.getUsersDao().findByUsername(username);
+        User userEmailTest = DaoFactory.getUsersDao().findByUserEmail(username);
+
+        if(userNameTest == null) {
+            usernameNotExists = true;
+        }
+
+        if(userEmailTest == null) {
+            userEmailNotExists = true;
+        }
+
+        if(usernameNotExists && userEmailNotExists) {
+            noUserConflicts = true;
+        }
+
+       String usernameExistsMessage = "This username already exists, please try another username";
+       String emailExistsMessage = "This email already exists, please try another email";
+
+       if(noUserConflicts){
+           User user = new User(username, email, password);
+           DaoFactory.getUsersDao().insert(user);
+           response.sendRedirect("/login");
+       } else if(!usernameNotExists) {
+           request.setAttribute("emailExistsMessage", emailExistsMessage);
+//           request.setAttribute("userInputEmail", );
+       }
+
     }
+
 }
