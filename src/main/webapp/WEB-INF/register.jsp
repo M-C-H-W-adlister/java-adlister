@@ -7,7 +7,8 @@
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
-    <div class="container">
+    <div class="container mt-4" style="background-color: azure">
+            <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
             <div class="form-group">
@@ -28,6 +29,7 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
+            </div>
     </div>
 </body>
 </html>
