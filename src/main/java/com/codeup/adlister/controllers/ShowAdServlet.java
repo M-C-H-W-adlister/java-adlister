@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @WebServlet(name = "controllers.ShowAdServlet", urlPatterns = "/ads/ad")
 public class ShowAdServlet extends HttpServlet {
@@ -66,6 +68,10 @@ public class ShowAdServlet extends HttpServlet {
 //    System.out.println(currentAdID);
 //    Below we use the id we grabbed to turn it into an Ad object
     Ad ad = DaoFactory.getAdsDao().findByID(currentAdID);
+    String[] ingredientsArray = ad.getIngredients().split(", ");
+    List<String> ingredients = Arrays.asList(ingredientsArray);
+    request.getSession().setAttribute("ingredients", ingredients);
+
 //    Setting the ad to the session attribute.
     request.getSession().setAttribute("ad", ad);
 

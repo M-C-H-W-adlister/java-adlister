@@ -5,6 +5,15 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
+    private String ingredients;
+
+  public Ad(long id, long userId, String title, String description, String ingredients) {
+    this.id = id;
+    this.userId = userId;
+    this.title = title;
+    this.description = description;
+    this.ingredients = ingredients;
+  }
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
@@ -19,8 +28,15 @@ public class Ad {
         this.description = description;
     }
 
+  public String getIngredients() {
+    return ingredients;
+  }
 
-    public long getId() {
+  public void setIngredients(String ingredients) {
+    this.ingredients = ingredients;
+  }
+
+  public long getId() {
         return id;
     }
 
