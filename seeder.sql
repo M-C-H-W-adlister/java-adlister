@@ -24,7 +24,6 @@ VALUES (9, 'Some potats','This is going to be vegetarian Gluten Free (so 2, 4)')
        (9,'Fishies','This should be meat lovers, japanese style. (so 1, 5)'),
        (9,'Burger bruh', 'Meat lovers, American, tex-mex cats. (so 1 7 8)');
 
-TRUNCATE ad_cat;
 
 INSERT INTO ad_cat (ad_id, cat_id)
 VALUES (14,2),

@@ -16,7 +16,7 @@
 
       <div class="container">
         <h1><label for="newTitle">New Title:</label><input type="text" name="newTitle" id="newTitle" value="${sessionScope.ad.title}!"></h1>
-        <p><label for="newDesc">New Title:</label><input type="text" name="newDesc" id="newDesc" value="${sessionScope.ad.description}!"></p>
+        <p><label for="newDesc">New Description</label><textarea name="newDesc" id="newDesc" rows="20" cols="70">${sessionScope.ad.description}!</textarea></p>
         <br>
         <ul>
           <c:forEach var="ingredient" items="${sessionScope.ingredients}">
