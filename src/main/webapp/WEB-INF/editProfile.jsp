@@ -21,10 +21,12 @@
 
 <%--        <label for="newPasswordConfirm"> New Password</label>--%>
 <%--        <input id="newPasswordConfirm" name="newPasswordConfirm" type="text">--%>
-
         <button type="submit"> Change Password</button>
-
-
+    </form>
+    <form action="user/email" method="post">
+        <label for="newEmail">New Email</label>
+        <input id = newEmail name="newEmail" type="text">
+        <button type="submit"> Change Email</button>
     </form>
 
 </head>

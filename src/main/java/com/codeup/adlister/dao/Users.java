@@ -9,4 +9,5 @@ public interface Users {
     Long insert(User user);
     User findByUserID(long id);
     void updateUserPassword (long id, String hashedPassword);
+    void updateUserEmail (long id, String email);
 }
