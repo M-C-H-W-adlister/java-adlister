@@ -4,11 +4,11 @@ alter table ads
     add ingredients text null;
 
 INSERT INTO ads (user_id, title, description,ingredients)
-VALUES (10, 'Quick & Crispy Home Fries','Prep: 10 mins, Cook:15 mins, Additional: 20 mins, Total: 45 mins, Servings: 2','3 large russet potatoes, peeled and quartered, 2 tablespoons olive oil ,1 tablespoon butter, Salt and freshly ground black pepper to taste, ¼ teaspoon paprika, cayenne pepper to taste, 1 pinch garlic powder,1 pinch onion powder, 1 tablespoon Chopped fresh chives.'),
+VALUES (6, 'Quick & Crispy Home Fries','Prep: 10 mins, Cook:15 mins, Additional: 20 mins, Total: 45 mins, Servings: 2','3 large russet potatoes, peeled and quartered, 2 tablespoons olive oil ,1 tablespoon butter, Salt and freshly ground black pepper to taste, ¼ teaspoon paprika, cayenne pepper to taste, 1 pinch garlic powder,1 pinch onion powder, 1 tablespoon Chopped fresh chives.'),
 
-       (9, 'Delicious Egg Salad for Sandwiches', 'Prep: 10 mins, Cook: 15 mins, Additional: 10 mins, Total: 35 mins, Servings: 4','8 eggs, ½ cup mayonnaise, 1 teaspoon prepared yellow mustard,¼ cup chopped green onion, salt and pepper to taste, ¼ teaspoon paprika'),
-       (8, 'Buffalo Chicken Wing Sauce', 'Prep: 5 mins, Cook: 5 mins, Total: 10 mins,  Servings: 8',' ⅔ cup hot pepper sauce, ½ cup cold unsalted butter, 1½ tablespoons white vinegar, ¼ teaspoon Worcestershire sauce, ¼ teaspoon cayenne pepper, ⅛ teaspoon garlic powder, salt to taste. Step 1 - Combine the hot sauce, butter, vinegar, Worcestershire sauce, cayenne pepper, garlic powder'),
-       (9,'Chicken Escabeche','Chicken breasts, onions, and carrots stew in vinegar and wine for a tangy South American escabeche meal. This is delicious served over rice or quinoa. This dish can be served immediately but it is even better if served at room temperature after the flavors have had some time to meld.','3 tablespoons extra-virgin olive oil, 12 and a half ounces skinless, boneless chicken breast halves, 3 and a half ounces carrots, julienned, 3 and a half ounces white onion, thinly sliced, 3 and a half ounces red onion, thinly sliced, 2 bay leaves, 1 clove garlic minced, 1 teaspoon ground black pepper, a half teaspoon salt, a quarter cup red wine vinegar, a quarter cup dry white wine, a quarter cup water, 1 teaspoon achiote powder, a half teaspoon cayenne pepper');
+       (7, 'Delicious Egg Salad for Sandwiches', 'Prep: 10 mins, Cook: 15 mins, Additional: 10 mins, Total: 35 mins, Servings: 4','8 eggs, ½ cup mayonnaise, 1 teaspoon prepared yellow mustard,¼ cup chopped green onion, salt and pepper to taste, ¼ teaspoon paprika'),
+       (6, 'Buffalo Chicken Wing Sauce', 'Prep: 5 mins, Cook: 5 mins, Total: 10 mins,  Servings: 8',' ⅔ cup hot pepper sauce, ½ cup cold unsalted butter, 1½ tablespoons white vinegar, ¼ teaspoon Worcestershire sauce, ¼ teaspoon cayenne pepper, ⅛ teaspoon garlic powder, salt to taste. Step 1 - Combine the hot sauce, butter, vinegar, Worcestershire sauce, cayenne pepper, garlic powder'),
+       (7,'Chicken Escabeche','Chicken breasts, onions, and carrots stew in vinegar and wine for a tangy South American escabeche meal. This is delicious served over rice or quinoa. This dish can be served immediately but it is even better if served at room temperature after the flavors have had some time to meld.','3 tablespoons extra-virgin olive oil, 12 and a half ounces skinless, boneless chicken breast halves, 3 and a half ounces carrots, julienned, 3 and a half ounces white onion, thinly sliced, 3 and a half ounces red onion, thinly sliced, 2 bay leaves, 1 clove garlic minced, 1 teaspoon ground black pepper, a half teaspoon salt, a quarter cup red wine vinegar, a quarter cup dry white wine, a quarter cup water, 1 teaspoon achiote powder, a half teaspoon cayenne pepper');
 
 # FROM first link, Step 1 -
 # Arrange potato pieces evenly on a microwave-safe plate. Microwave on high until just tender, about 4 minutes. Let cool to room temperature. Cut potatoes into bite-size chunks. , Step 2 - Heat butter and olive oil in a non-stick skillet over medium-high heat. When butter melts and starts to turn brown, swirl the pan and add the potatoes. Shake pan to arrange in an even layer. Season with salt, pepper, paprika, garlic powder, and onion powder.  , Step 3 -
@@ -50,16 +50,16 @@ VALUES ('Meat Lovers'),
        ('Tex-mex');
 # Make sure to edit the these ids to match ids of ads you have, in the first column, 2nd number should be the same tho.
 INSERT INTO ad_cat (ad_id, cat_id)
-VALUES (17,2),
-       (17,3),
-       (17,4),
-       (17,7),
-       (18,7),
-       (19,1),
-       (19,7),
-       (20,1),
-       (20,6),
-       (20,8);
+VALUES (5,2),
+       (4,3),
+       (4,4),
+       (4,7),
+       (4,7),
+       (4,1),
+       (5,7),
+       (6,1),
+       (7,6),
+       (5,8);
 
 INSERT INTO ad_cat (ad_id, cat_id)
 VALUES (14,2),
