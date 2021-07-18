@@ -9,9 +9,13 @@
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-    <div class="container">
+    <div class="container mt-4" style="background-color:azure">
+        <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
+    <form method="post" action="/editProfile">
+        <button type="submit">Edit Profile</button>
+    </form>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
@@ -21,6 +25,7 @@
                 <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">
                 <button type="submit">View Ad</button>
             </form>
+        </div>
         </div>
     </c:forEach>
 

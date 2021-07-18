@@ -1,10 +1,54 @@
 
+USE adlister_db;
+
+
+alter table ads
+    add directions TEXT null;
+
+alter table ads
+    add ingredients text null;
+
+
+INSERT INTO cat(cat_name)
+VALUES ('Meat Lovers'),
+       ('Vegetarian'),
+       ('Keto'),
+       ('Gluten Free'),
+       ('Japanese Style'),
+       ('Mexican'),
+       ('American'),
+       ('Tex-mex');
+
+INSERT INTO ads (user_id, title, description)
+VALUES (9, 'Some potats','This is going to be vegetarian Gluten Free (so 2, 4)'),
+       (9,'Fishies','This should be meat lovers, japanese style. (so 1, 5)'),
+       (9,'Burger bruh', 'Meat lovers, American, tex-mex cats. (so 1 7 8)');
+
+
+INSERT INTO ad_cat (ad_id, cat_id)
+VALUES (14,2),
+       (14,4),
+       (15,1),
+       (15,5),
+       (16,1),
+       (16,7),
+       (16,8);
+
+USE adlister_db;
+SELECT *
+FROM ads
+WHERE id IN (SELECT ad_id
+             FROM ad_cat
+             WHERE cat_id = 1);
+# 1 would be the cat we want to search by Cat_ID...
+# And return  the resultset for all the ads that have that cat ID.
 
 USE adlister_db;
 
 INSERT INTO users (username, email, password)
 VALUES ('testUser', 'test@gmail.com','hashedpassed');
 
+UPDATE ads set ingredients = '3 large russet potatoes, peeled and quartered, 2 tablespoons olive oil ,1 tablespoon butter, Salt and freshly ground black pepper to taste, ¼ teaspoon paprika, cayenne pepper to taste, 1 pinch garlic powder,1 pinch onion powder, 1 tablespoon Chopped fresh chives' where id = 14;
 
 
 INSERT INTO ads (user_id, title, description)
@@ -19,4 +63,5 @@ Cook: 15 mins, Additional: 10 mins, Total: 35 mins, Servings: 4, Ingredient Chec
 Place the chopped eggs in a bowl, and stir in the mayonnaise, mustard and green onion. Season with salt, pepper and paprika. Stir and serve on your favorite bread or crackers.
  '),
        (4, 'Buffalo Chicken Wing Sauce', 'Prep: 5 mins, Cook: 5 mins, Total: 10 mins,  Servings: 8, Ingredients: ⅔ cup hot pepper sauce, ½ cup cold unsalted butter, 1½ tablespoons white vinegar, ¼ teaspoon Worcestershire sauce, ¼ teaspoon cayenne pepper, ⅛ teaspoon garlic powder, salt to taste. Step 1 - Combine the hot sauce, butter, vinegar, Worcestershire sauce, cayenne pepper, garlic powder, and salt in a pot and place over medium heat. Bring to a simmer while stirring with a whisk. As soon as the liquid begins to bubble on the sides of the pot, remove from heat, stir with the whisk, and set aside for use.');
+
 
