@@ -44,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
         boolean userEmailNotExists =  false;
         boolean passwordNoMatch = false;
         boolean noUserConflicts = false;
-        
+
         User userNameTest = DaoFactory.getUsersDao().findByUsername(username);
         User userEmailTest = DaoFactory.getUsersDao().findByUserEmail(email);
 
