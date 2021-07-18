@@ -22,7 +22,7 @@ public class MySQLUsersDao implements Users {
     }
 
 
-    @Override
+
     public User findByUsername(String username) {
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
         try {
@@ -75,7 +75,7 @@ public class MySQLUsersDao implements Users {
         );
     }
 
-    @Override
+
     public User findByUserEmail(String email){
         String query = "SELECT * FROM users WHERE email = ? LIMIT 1";
         try {
