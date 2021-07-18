@@ -6,9 +6,11 @@
     </jsp:include>
 </head>
 <body>
+
     <div class="container mt-4" style="background-color:azure">
         <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
-        <h1>Create a new Ad</h1>
+        <h1>Create your own Recipe!</h1>
+          
         <form action="/ads/create" method="post">
             <div class="form-group">
                 <label for="title">Title</label>
