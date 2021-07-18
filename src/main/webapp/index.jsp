@@ -13,13 +13,7 @@
 <%--        comment--%>
     </div>
 
-   c
-            <form action="/" method="POST" class="form-inline col-12 justify-content-center"></form>
-                <h1 class="col-12 text-center mb-5">Welcome to the Adlister!</h1>
-                <input id="search-title" name="search-title" type="search" placeholder="Search Ads"
-                       aria-label="Search" class="form-control">
-                <button class="btn btn-primary" type="submit">Search</button>
-        </div>
-    </div>
+
+                <h1 class="col-12 text-center mb-5">Welcome to the Food Mood!</h1>
 </body>
 </html>
