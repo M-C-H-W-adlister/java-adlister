@@ -6,15 +6,7 @@ import java.util.List;
 
 public interface Users {
     User findByUsername(String username);
-  
     Long insert(User user);
-  
     User findByUserID(long id);
-  
     User findByUserEmail(String email);
-
-    void updateUserPassword (long id, String hashedPassword);
-
-    void updateUserEmail (long id, String email);
-
 }

@@ -65,8 +65,8 @@ public class RegisterServlet extends HttpServlet {
 
 
 
-       String ExistsMessage = "* already exists";
-       String passwordMessage = "* doesn't match";
+       String ExistsMessage = "<span style=\"color:red\">* already exists</span>";
+       String passwordMessage = "<span style=\"color:red\">* doesn't match</span>";
 
        if(noUserConflicts){
            User user = new User(username, email, password);
