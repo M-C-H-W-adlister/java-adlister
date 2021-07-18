@@ -44,7 +44,7 @@
   <c:forEach var="ad" items="${ads}">
     <%--https://placeholder.pics/svg/300x200--%>
     <div class="card col-md-4">
-      <img src="https://placeholder.pics/svg/300x200" class="card-img-top" alt="...">
+      <img height="200" width="300" src="https://www.kindpng.com/picc/m/74-746950_fry-pan-cooking-food-beverage-cartoon-hd-png.png"  class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${ad.title}</h5>
         <p class="card-text">${ad.description}</p>
