@@ -2,22 +2,29 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
-    </jsp:include>
+  <jsp:include page="/WEB-INF/partials/head.jsp">
+    <jsp:param name="title" value="Viewing All The Ads"/>
+  </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
 
 <div class="container mt-4" style="background-color:azure">
-    <h1>Custom recipes from our table to yours!</h1>
-    <form method="post" action="/search">
-        <label for="searchTitle">
-            Search by Title
-        </label>
-        <input id="searchTitle" name="searchTitle" type="text">
-        <button type="submit"> Search </button>
-    </form>
+  <h1>Custom recipes from our table to yours!</h1>
+  <form method="post" action="/search">
+    <label for="searchTitle">Search by Title</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Search</button>
+      </div>
+      <input type="text" name="searchTitle" id="searchTitle" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+    </div>
+
+
+<%--    <input id="searchTitle" name="searchTitle" type="text">--%>
+<%--    <button type="submit" class="btn btn-primary"> Search</button>--%>
+  </form>
 
   <form method="post" action="ads/category">
     <label for="catID">Select category to search by.</label>
@@ -31,21 +38,35 @@
       <option value="7">American</option>
       <option value="8">Tex-mex</option>
     </select>
-    <button type="submit">Submit category</button>
+    <button type="submit" class="btn btn-primary">Submit category</button>
   </form>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-          <form method="POST" action="/ads/ad">
-            <label for="selectedAd" hidden></label>
-            <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">
-            <button type="submit">View Ad</button>
-          </form>
-        </div>
-    </c:forEach>
+  <c:forEach var="ad" items="${ads}">
+    <%--https://placeholder.pics/svg/300x200--%>
+    <div class="card col-md-4">
+      <img src="https://placeholder.pics/svg/300x200" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">${ad.title}</h5>
+        <p class="card-text">${ad.description}</p>
+        <form method="GET" action="/ads/ad">
+          <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">
+          <button type="submit" class="btn btn-primary">View Recipe</button>
+        </form>
+      </div>
+    </div>
+    <%--Below is old code, could be deleted.--%>
+    <%--    <div class="col-md-6">--%>
+    <%--      <h2>${ad.title}</h2>--%>
+    <%--      <p>${ad.description}</p>--%>
+    <%--      <form method="GET" action="/ads/ad">--%>
+    <%--        <label for="selectedAd" hidden></label>--%>
+    <%--        <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">--%>
+    <%--        <button type="submit">View Ad</button>--%>
+    <%--      </form>--%>
+    <%--    </div>--%>
+  </c:forEach>
 </div>
+<jsp:include page="/WEB-INF/partials/bootstrapScripts.jsp"/>
 
 </body>
 </html>
