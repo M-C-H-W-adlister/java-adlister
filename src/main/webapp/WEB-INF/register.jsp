@@ -12,12 +12,12 @@
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
             <div class="form-group">
-                <label for="username">Username ${ExistsMessage}</label>
+                <label for="username">Username ${usernameExistsMessage}</label>
                 <input id="username" name="username" value="${username}" class="form-control" type="text">
 
             </div>
             <div class="form-group">
-                <label for="email">Email ${ExistsMessage}</label>
+                <label for="email">Email ${emailExistsMessage}</label>
                 <input id="email" name="email" value="${email}" class="form-control" type="text">
             </div>
             <div class="form-group">
