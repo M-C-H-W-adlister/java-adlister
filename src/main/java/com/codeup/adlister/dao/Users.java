@@ -8,5 +8,7 @@ public interface Users {
     User findByUsername(String username);
     Long insert(User user);
     User findByUserID(long id);
+    void updateUserPassword(long id, String hashedPassword);
+    void updateUserEmail(long id, String email);
     User findByUserEmail(String email);
 }
