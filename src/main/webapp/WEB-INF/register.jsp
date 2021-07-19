@@ -7,9 +7,9 @@
 </head>
 <body>
     <jsp:include page="partials/navbar.jsp" />
-    <div class="container mt-4" style="background-color: azure">
+    <div class="container mt-4">
             <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
-        <h1>Please fill in your information.</h1>
+        <h1>Register Here</h1>
         <form action="/register" method="post">
             <div class="form-group">
                 <label for="username">Username ${usernameExistsMessage}</label>

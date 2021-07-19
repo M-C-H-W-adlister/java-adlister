@@ -10,8 +10,8 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 
-<div class="container mt-4" style="background-color:azure">
-  <h1>Custom recipes from our table to yours!</h1>
+<div class="container mt-4" style="background-color:white">
+  <h1>Discover Recipes</h1>
   <form method="post" action="/search">
     <label for="searchTitle">Search by Title</label>
     <div class="input-group mb-3">
@@ -27,7 +27,7 @@
   </form>
 
   <form method="post" action="ads/category">
-    <label for="catID">Select category to search by.</label>
+    <label for="catID">Category Selection</label>
     <select id="catID" name="catID">
       <option value="1">Meat Lovers</option>
       <option value="2">Vegetarian</option>

@@ -8,9 +8,9 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container mt-4" style="background-color:azure">
+    <div class="container mt-4">
         <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
-        <h1>Please Log In</h1>
+        <h1>Login</h1>
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -32,6 +32,7 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
+            <p>New to FoodMood? <a href="/register">Register here</a></p>
         </div>
     </div>
 </body>

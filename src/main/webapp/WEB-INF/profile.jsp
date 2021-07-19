@@ -9,22 +9,22 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<div class="container mt-4" style="background-color:azure">
+<div class="container mt-4">
 <%--  <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">--%>
     <h1>Welcome, ${sessionScope.user.username}!</h1>
 <%--  </div>--%>
   <form method="post" action="/editProfile">
-    <button type="submit">Edit Profile</button>
+    <button class="btn btn-info" type="submit">Edit Profile</button>
   </form>
   <c:forEach var="ad" items="${ads}">
   <div class="card col-md-4">
-    <img src="https://placeholder.pics/svg/300x200" class="card-img-top" alt="...">
+    <img height="200" width="300" src="https://www.kindpng.com/picc/m/74-746950_fry-pan-cooking-food-beverage-cartoon-hd-png.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">${ad.title}</h5>
       <p class="card-text">${ad.description}</p>
       <form method="GET" action="/ads/ad">
         <input checked hidden name="selectedAd" id="selectedAd" value="${ad.id}">
-        <button type="submit" class="btn btn-primary">View Recipe</button>
+        <button type="submit" class="btn btn-success">View Recipe</button>
       </form>
     </div>
   </div>

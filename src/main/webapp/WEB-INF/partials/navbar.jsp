@@ -13,6 +13,7 @@
     <ul class="nav navbar-nav navbar-right">
       <c:choose>
         <c:when test="<%=loggedIn%>">
+          <li><a href="/profile">Profile</a></li>
           <li><a href="/logout">Logout</a></li>
           <li><a href="/ads/create">Create Recipes</a></li>
         </c:when>

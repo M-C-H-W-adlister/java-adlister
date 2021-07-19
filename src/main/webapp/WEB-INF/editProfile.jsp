@@ -18,7 +18,7 @@
             <div class="container mt-4">
                 <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
             <div>
-                <h3>What would you like to edit?</h3>
+                <h3>Edit</h3>
             </div>
                     <div>
                         <form action="user/password" method="post" >
