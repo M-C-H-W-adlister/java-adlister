@@ -8,7 +8,6 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<body>
 
 
 <c:choose>
