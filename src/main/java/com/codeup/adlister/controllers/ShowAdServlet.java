@@ -31,11 +31,16 @@ public class ShowAdServlet extends HttpServlet {
 //    System.out.println(currentAdID);
 //    Below we use the id we grabbed to turn it into an Ad object
     Ad ad = DaoFactory.getAdsDao().findByID(currentAdID);
+    String[] ingredientsArray = ad.getIngredients().split(", ");
+    List<String> ingredients = Arrays.asList(ingredientsArray);
+    request.getSession().setAttribute("ingredients", ingredients);
+
 //    Setting the ad to the session attribute.
     request.getSession().setAttribute("ad", ad);
 
 //    Below we are grabbing the Ad's owner's username
     User adOwner = DaoFactory.getUsersDao().findByUserID(ad.getUserId());
+
     request.getSession().setAttribute("adOwner", adOwner);
 
 
@@ -51,8 +56,6 @@ public class ShowAdServlet extends HttpServlet {
 
     request.getRequestDispatcher("/WEB-INF/ads/ad.jsp").forward(request, response);
   }
-
-  //
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //    Below is from the ViewProfile servlet where it would check to see if you are logged in before viewing the page.
 
@@ -77,6 +80,7 @@ public class ShowAdServlet extends HttpServlet {
 
 //    Below we are grabbing the Ad's owner's username
     User adOwner = DaoFactory.getUsersDao().findByUserID(ad.getUserId());
+
     request.getSession().setAttribute("adOwner", adOwner);
 
 
