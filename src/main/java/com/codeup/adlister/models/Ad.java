@@ -15,6 +15,13 @@ public class Ad {
     this.ingredients = ingredients;
   }
 
+  public Ad(long userId, String title, String description, String ingredients) {
+    this.userId = userId;
+    this.title = title;
+    this.description = description;
+    this.ingredients = ingredients;
+  }
+
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
         this.userId = userId;
