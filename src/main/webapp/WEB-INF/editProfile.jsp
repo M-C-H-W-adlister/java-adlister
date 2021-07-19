@@ -14,6 +14,7 @@
     </jsp:include>
 </head>
     <body>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
             <div class="container mt-4">
                 <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
             <div>
