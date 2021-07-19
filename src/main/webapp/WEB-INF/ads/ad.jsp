@@ -8,18 +8,22 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<body style="background-color: darkslategrey">
+<body style="background-color: coral">
 
 
 <c:choose>
   <c:when test="${sessionScope.isOwner}">
+    <div style="text-align: center">
+      <h2>Edit Recipe Post</h2>
+    </div>
+
     <form method ="POST" action="/ads/edit">
-    <h2>You are the owner you may edit this.</h2>
+
 
       <div class="container mt-4" style="background-color:azure">
         <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
         <h1><label for="newTitle">New Title:</label><input type="text" name="newTitle" id="newTitle" value="${sessionScope.ad.title}!"></h1>
-        <p><label for="newDesc">New Description</label><textarea name="newDesc" id="newDesc" rows="20" cols="70">${sessionScope.ad.description}!</textarea></p>
+        <p><label for="newDesc">New Description</label><textarea name="newDesc" id="newDesc" rows="20" cols="70" style="margin: 0px; height: 94px; width: 387px;">${sessionScope.ad.description}!</textarea></p>
         <br>
         <ul>
           <c:forEach var="ingredient" items="${sessionScope.ingredients}">
@@ -31,13 +35,19 @@
         <br>
       <%--        <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
         <h4>Creator: ${sessionScope.adOwner.username}</h4>
-        <button type="submit">Submit Changes</button>
+          <div class="container">
+            <div class="col-sm">
+        <button type="submit" class="btn btn-primary" >Submit Changes</button>
+              </div>
+            </div>
           </div>
       </div>
     </form>
     <form method="POST" action="/ads/delete">
       <div class="container">
-      <button type="submit">Delete me</button>
+        <div class="col-sm">
+      <button type="submit" class="btn btn-danger">Delete Recipe Post</button>
+          </div>
       </div>
     </form>
   </c:when>
@@ -55,11 +65,10 @@
       </ul>
       <br>
     <%--      <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
-      <h4>Creator: ${sessionScope.adOwner.username}</h4>
+      <h2>Creator: ${sessionScope.adOwner.username}</h2>
     </div>
   </c:otherwise>
 </c:choose>
-
 <%--<div class="container">--%>
 <%--  <h1>Title: ${sessionScope.ad.title}!</h1>--%>
 <%--  <p>Description: ${sessionScope.ad.description}!</p>--%>
@@ -67,6 +76,5 @@
 <%--  <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
 
 <%--</div>--%>
-
 </body>
 </html>

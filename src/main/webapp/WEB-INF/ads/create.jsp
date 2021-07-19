@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <div class="container mt-4" style="background-color:azure">
+    <div class="container mt-4">
         <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
         <h1>Create your own Recipe!</h1>
           
