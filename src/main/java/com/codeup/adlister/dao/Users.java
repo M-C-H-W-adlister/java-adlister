@@ -11,4 +11,5 @@ public interface Users {
     void updateUserPassword(long id, String hashedPassword);
     void updateUserEmail(long id, String email);
     User findByUserEmail(String email);
+    void deleteByID(Long id);
 }

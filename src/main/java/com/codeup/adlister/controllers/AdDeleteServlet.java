@@ -11,6 +11,7 @@ import java.io.IOException;
 
 @WebServlet(name = "AdDeleteServlet", urlPatterns = "/ads/delete")
 public class AdDeleteServlet extends HttpServlet {
+  @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Ad deleteAdd = (Ad) request.getSession().getAttribute("ad");
     DaoFactory.getAdsDao().deleteByID(deleteAdd.getId());
