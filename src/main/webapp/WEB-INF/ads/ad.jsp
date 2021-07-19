@@ -8,7 +8,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<body style="background-color: coral">
+<body>
 
 
 <c:choose>
@@ -19,30 +19,36 @@
 
     <form method ="POST" action="/ads/edit">
 
+          <div class="container mt-4">
 
-      <div class="container mt-4" style="background-color:azure">
-        <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
-        <h1><label for="newTitle">New Title:</label><input type="text" name="newTitle" id="newTitle" value="${sessionScope.ad.title}!"></h1>
-        <p><label for="newDesc">New Description</label><textarea name="newDesc" id="newDesc" rows="20" cols="70" style="margin: 0px; height: 94px; width: 387px;">${sessionScope.ad.description}!</textarea></p>
-        <br>
-        <ul>
-          <c:forEach var="ingredient" items="${sessionScope.ingredients}">
-            <li>
-                ${ingredient}
-            </li>
-          </c:forEach>
-        </ul>
-        <br>
-      <%--        <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
-        <h4>Creator: ${sessionScope.adOwner.username}</h4>
-          <div class="container">
-            <div class="col-sm">
-        <button type="submit" class="btn btn-primary" >Submit Changes</button>
-              </div>
+            <div class="row d-flex justify-content-center align-items-center" style="height: 90vh">
+              <form>
+                <div class="form-group">
+                  <label for="newTitle">New Title:</label>
+                  <input type="text" name="newTitle" id="newTitle" value="${sessionScope.ad.title}">
+                </div>
+                <div class="form-group">
+                  <label for="newDesc">New Description</label>
+                  <textarea class="form-control" name="newDesc" id="newDesc" rows="3">${sessionScope.ad.description}</textarea>
+                  <ul>
+                    <c:forEach var="ingredient" items="${sessionScope.ingredients}">
+                      <li>
+                          ${ingredient}
+                      </li>
+                    </c:forEach>
+                  </ul>
+                  <br>
+                    <%--        <h4>User ID: ${sessionScope.ad.userId}</h4>--%>
+                  <h4>Creator: ${sessionScope.adOwner.username}</h4>
+                  <div class="container">
+                    <div class="col-sm">
+                      <button type="submit" class="btn btn-primary" >Submit Changes</button>
+                    </div>
+                </div>
+                </div>
+              </form>
             </div>
           </div>
-      </div>
-    </form>
     <form method="POST" action="/ads/delete">
       <div class="container">
         <div class="col-sm">
