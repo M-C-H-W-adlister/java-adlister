@@ -38,7 +38,7 @@
 
     <form action="user/delete" method="post">
       <h5>Delete Account?</h5>
-      <button type="submit" class="btn btn-primary"> Delete Account?</button>
+      <button type="submit" class="btn btn-danger"> Delete Account?</button>
     </form>
   </div>
 </div>

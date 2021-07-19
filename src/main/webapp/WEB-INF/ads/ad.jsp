@@ -47,15 +47,16 @@
                 </div>
                 </div>
               </form>
+              <form method="POST" action="/ads/delete">
+                <div class="container">
+                  <div class="col-sm">
+                    <button type="submit" class="btn btn-danger">Delete Recipe Post</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-    <form method="POST" action="/ads/delete">
-      <div class="container">
-        <div class="col-sm">
-      <button type="submit" class="btn btn-danger">Delete Recipe Post</button>
-          </div>
-      </div>
-    </form>
+
   </c:when>
   <c:otherwise>
     <div class="container">
