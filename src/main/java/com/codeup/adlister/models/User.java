@@ -8,6 +8,11 @@ public class User {
     private String email;
     private String password;
 
+//    NEW STUFF BELOW
+    private String bio;
+    private String image;
+    private boolean isAdmin;
+
     public User() {}
 
     public User(String username, String email, String password) {

@@ -7,6 +7,13 @@ public class Ad {
     private String description;
     private String ingredients;
 
+//    NEW STUFF BELOW
+    private String directions;
+    private String image;
+
+
+
+
   public Ad(long id, long userId, String title, String description, String ingredients) {
     this.id = id;
     this.userId = userId;

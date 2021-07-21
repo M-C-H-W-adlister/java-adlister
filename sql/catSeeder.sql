@@ -11,15 +11,13 @@ VALUES (6, 'Quick & Crispy Home Fries','Prep: 10 mins, Cook:15 mins, Additional:
        (7,'Chicken Escabeche','Chicken breasts, onions, and carrots stew in vinegar and wine for a tangy South American escabeche meal. This is delicious served over rice or quinoa. This dish can be served immediately but it is even better if served at room temperature after the flavors have had some time to meld.','3 tablespoons extra-virgin olive oil, 12 and a half ounces skinless, boneless chicken breast halves, 3 and a half ounces carrots, julienned, 3 and a half ounces white onion, thinly sliced, 3 and a half ounces red onion, thinly sliced, 2 bay leaves, 1 clove garlic minced, 1 teaspoon ground black pepper, a half teaspoon salt, a quarter cup red wine vinegar, a quarter cup dry white wine, a quarter cup water, 1 teaspoon achiote powder, a half teaspoon cayenne pepper');
 
 # FROM first link, Step 1 -
-# Arrange potato pieces evenly on a microwave-safe plate. Microwave on high until just tender, about 4 minutes. Let cool to room temperature. Cut potatoes into bite-size chunks. , Step 2 - Heat butter and olive oil in a non-stick skillet over medium-high heat. When butter melts and starts to turn brown, swirl the pan and add the potatoes. Shake pan to arrange in an even layer. Season with salt, pepper, paprika, garlic powder, and onion powder.  , Step 3 -
-# As potatoes brown, toss them and keep turning them every few minutes until they are crusty and crispy-edged and a rich reddish-brown color, 10 to 12 minutes. If potatoes seem to be cooking too quickly, reduce heat to medium. Serve topped with chopped chives.
+# Arrange potato pieces evenly on a microwave-safe plate. Microwave on high until just tender, about 4 minutes. Let cool to room temperature. Cut potatoes into bite-size chunks. Heat butter and olive oil in a non-stick skillet over medium-high heat. When butter melts and starts to turn brown, swirl the pan and add the potatoes. Shake pan to arrange in an even layer. Season with salt, pepper, paprika, garlic powder, and onion powder. As potatoes brown, toss them and keep turning them every few minutes until they are crusty and crispy-edged and a rich reddish-brown color, 10 to 12 minutes. If potatoes seem to be cooking too quickly, reduce heat to medium. Serve topped with chopped chives.
 
 # From 2nd ad
-# Directions: Step 1 - Place egg in a saucepan and cover with cold water. Bring water to a boil and immediately remove from heat. Cover and let eggs stand in hot water for 10 to 12 minutes. Remove from hot water, cool, peel and chop. Step 2 -
-# Place the chopped eggs in a bowl, and stir in the mayonnaise, mustard and green onion. Season with salt, pepper and paprika. Stir and serve on your favorite bread or crackers.
+# Place egg in a saucepan and cover with cold water. Bring water to a boil and immediately remove from heat. Cover and let eggs stand in hot water for 10 to 12 minutes. Remove from hot water, cool, peel and chop. Place the chopped eggs in a bowl, and stir in the mayonnaise, mustard and green onion. Season with salt, pepper and paprika. Stir and serve on your favorite bread or crackers.
 
 # From 3rd
-# and salt in a pot and place over medium heat. Bring to a simmer while stirring with a whisk. As soon as the liquid begins to bubble on the sides of the pot, remove from heat, stir with the whisk, and set aside for use.
+# Bring to a simmer while stirring with a whisk. As soon as the liquid begins to bubble on the sides of the pot, remove from heat, stir with the whisk, and set aside for use.
 
 
 CREATE TABLE cat
